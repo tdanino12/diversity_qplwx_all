@@ -49,7 +49,7 @@ class DMAQ_QattenMixer(nn.Module):
             adv_w_final = 0
             return v_tot, adv_w_final
         else:
-            adv_tot = self.calc_adv(agent_qs, states, actions, max_q_i)
+            adv_tot, adv_w_final = self.calc_adv(agent_qs, states, actions, max_q_i)
             return adv_tot, adv_w_final
 
     def forward(self, agent_qs, states, actions=None, max_q_i=None, is_v=False):
